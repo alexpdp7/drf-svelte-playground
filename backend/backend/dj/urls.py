@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
@@ -34,7 +35,7 @@ router = routers.DefaultRouter()
 router.register(r'cats', CatViewSet)
 
 class MyLoginView(auth_views.LoginView):
-    success_url_allowed_hosts = {"127.0.0.1:5173"}
+    success_url_allowed_hosts = {settings.FRONTEND_URL.replace("http://", "")}
 
 urlpatterns = [
     path("admin/", admin.site.urls),

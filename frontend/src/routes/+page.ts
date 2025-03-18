@@ -1,11 +1,11 @@
 import type { PageLoad } from './$types';
 import { redirect } from '@sveltejs/kit';
 
-export const load: PageLoad = async ({ fetch, params }) => {
-	const res = await fetch("http://127.0.0.1:8000/api/cats/", { options: { credentials: "include" }});
-	console.log(res);
+export const load: PageLoad = async ({ fetch, params, url }) => {
+	const res = await fetch(import.meta.env.VITE_BACKEND_ENDPOINT + "/api/cats/", { options: { credentials: "include" }});
+
 	if (res.status == 403) {
-	   redirect(302, "http://127.0.0.1:8000/accounts/login?next=http://127.0.0.1:5173");
+	   redirect(302, import.meta.env.VITE_BACKEND_ENDPOINT + "/accounts/login?next=" + url.href);
 	}
 	const item = await res.json();
 
