@@ -1,6 +1,8 @@
 # README
 
-Requirements:
+> [!IMPORTANT]
+> The READMEs in the `backend` and `frontend` directories come from the Django and Svelte templates.
+> For this exercise, look *ONLY* at this README.
 
 * [uv](https://docs.astral.sh/uv/#installation)
 * NPM. (On a Debian system, `sudo apt install npm` is fine.)
