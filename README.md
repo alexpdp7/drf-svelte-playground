@@ -1,5 +1,10 @@
 # README
 
+Requirements:
+
+* [uv](https://docs.astral.sh/uv/#installation)
+* NPM. (On a Debian system, `sudo apt install npm` is fine.)
+
 In one terminal:
 
 ```
@@ -11,6 +16,7 @@ On a different terminal:
 
 ```
 cd frontend
+npm install  # only needed once (or when the dependencies on package.json change)
 npm run dev -- --host
 ```
 
