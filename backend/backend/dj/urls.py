@@ -16,6 +16,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import include, path
 from rest_framework import routers, serializers, viewsets
 from backend.dj.app import models
@@ -32,9 +33,13 @@ class CatViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register(r'cats', CatViewSet)
 
+class MyLoginView(auth_views.LoginView):
+    success_url_allowed_hosts = {"127.0.0.1:5173"}
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("backend.dj.app.urls")),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
+    path("accounts/login/", MyLoginView.as_view(), name="login"),
 ]
