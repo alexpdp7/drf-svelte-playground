@@ -28,10 +28,12 @@ npm run dev -- --host
 
 In a browser:
 
-* Visit `http://127.0.0.1:8000/api-auth/login/`.
+* Visit `http://127.0.0.1:5173`.
+* Because you are not logged in, the application redirects you to http://127.0.0.1:8000/accounts/login/ for logging in.
 * Log in as `staff`/`staff`.
-* You are redirected to an error page, this is normal.
-* Visit `http://127.0.0.1:5173/`.
+* You are redirected to `http://127.0.0.1:5173/`.
+* Because you are now logged in, you can view the cats.
+* If you use the admin at `http://127.0.0.1:8000/admin/`, and add cats as the `staff` user, when refreshing `http://127.0.0.1:5173/` updates are visible.
 
 ## Adjusting the base URLs
 
