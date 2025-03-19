@@ -66,3 +66,15 @@ When redefining these URLs, adjust the URLs used in the instructions accordingly
 
 > [!IMPORTANT]
 > Review the URL displayed in the browser URL bar constantly to make sure it matches your expectations.
+
+> [!IMPORTANT]
+> By default Django only listens on 127.0.0.1, the loopback address, which is only accessible from the same machine where Django runs.
+>
+> To make Django accessible from different hosts, you can run Django listening on all IPv4 addresses
+>
+> ```
+> uv run devserver.py -- 0.0.0.0:8000
+> ```
+>
+> You can also run `uv run devserver.py -- -6` so Django uses an IPv6 address.
+> This might be needed if `localhost` uses IPv6 (`::1`) in the machine where Django runs.

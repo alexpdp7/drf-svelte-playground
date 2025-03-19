@@ -70,7 +70,7 @@ wheels = [
 [[package]]
 name = "django-tws"
 version = "0.1.0"
-source = { git = "https://github.com/alexpdp7/django-tws.git#f4e41da2fcfa4b2bd14b568bc6de639e3d35626c" }
+source = { git = "https://github.com/alexpdp7/django-tws.git#fa0c3fa905b11dea46cf5533d039169a7f05ce92" }
 dependencies = [
     { name = "django-environ" },
 ]
