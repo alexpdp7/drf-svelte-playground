@@ -7,7 +7,19 @@
 ## Requirements
 
 * [uv](https://docs.astral.sh/uv/#installation)
-* NPM. (On a Debian system, `sudo apt install npm` is fine.)
+* NPM
+  * On a Debian 12 system, `sudo apt install npm` is fine
+  * On Ubuntu 22.04, [install nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script).
+
+## Using nvm
+
+> [!IMPORTANT]
+> If you install nvm, then the nvm installer prints some instructions.
+> You must read the instructions before npm is operative.
+
+You must run `nvm install 22` once to install Node.js 22.
+
+In every terminal session where you need to run `npm`, execute `nvm use 22` to configure the right version of Node.js.
 
 ## Running
 
